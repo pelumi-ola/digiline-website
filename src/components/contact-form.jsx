@@ -102,7 +102,7 @@ export function ContactForm() {
         {/* Submit Button */}
         <Button
           type="submit"
-          className="w-full bg-linear-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-semibold py-3 rounded-lg uppercase tracking-wide text-sm"
+          className="w-full bg-linear-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-semibold py-3 rounded-lg capitalize tracking-wide text-sm"
         >
           Submit
         </Button>

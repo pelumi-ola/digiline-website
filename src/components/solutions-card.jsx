@@ -126,7 +126,7 @@ export default function SolutionsCards() {
                 </p>
 
                 <Link href={item.href} className="mt-5">
-                  <Button className="bg-white text-ring cursor-pointer hover:bg-purple-100 font-semibold p-3 rounded-sm uppercase text-sm tracking-wide">
+                  <Button className="bg-white text-ring cursor-pointer hover:bg-purple-100 font-semibold p-3 rounded-sm capitalize text-sm tracking-wide">
                     Learn More
                   </Button>
                 </Link>

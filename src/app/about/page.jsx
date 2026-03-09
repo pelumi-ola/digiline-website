@@ -165,7 +165,7 @@ export default function AboutPage() {
           </div>
 
           <Link href="/solutions">
-            <Button className="bg-primary lg:mt-3 text-white hover:text-ring hover:bg-purple-200 font-semibold px-8 py-8 w-65 rounded-xl uppercase text-sm tracking-wide">
+            <Button className="bg-primary lg:mt-3 text-white hover:text-ring hover:bg-purple-200 font-semibold px-8 py-8 w-65 rounded-xl capitalize text-sm tracking-wide">
               View Our Solutions
               <ArrowRight className="w-6 h-6" />
             </Button>

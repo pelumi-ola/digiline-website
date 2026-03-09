@@ -45,7 +45,7 @@ export function Newsletter({
         once: false,
         amount: 0.3,
       }}
-      className="flex flex-row bg-[#9D66F1]/44 py-12 md:py-16 md:px-20 px-4 gap-20 md:gap-80"
+      className="flex flex-cols md:flex-row bg-[#9D66F1]/44 py-12 md:py-16 md:px-20 px-4 gap-20 md:gap-80"
     >
       <div className="mb-8">
         <h2 className="text-md md:text-2xl font-bold text-[#000000] mb-3 text-balance">
@@ -68,7 +68,7 @@ export function Newsletter({
         />
         <Button
           type="submit"
-          className="absolute right-0 top-0.5 bg-primary hover:bg-purple-950 text-white font-semibold px-3 py-3 rounded-full text-sm uppercase tracking-wide whitespace-nowrap"
+          className="absolute right-0 top-0.5 bg-primary hover:bg-purple-950 text-white font-semibold px-3 py-3 rounded-full text-sm capitalize tracking-wide whitespace-nowrap"
         >
           {buttonText}
         </Button>

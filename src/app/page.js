@@ -189,7 +189,7 @@ export default function Home() {
                 innovation, and long-term success.
               </p>
               <Link href="/about">
-                <Button className="bg-primary text-white hover:bg-purple-800 font-semibold px-8 py-8 rounded-xl uppercase text-sm tracking-wide">
+                <Button className="bg-primary text-white hover:bg-purple-800 font-semibold px-8 py-8 rounded-xl capitalize text-sm tracking-wide">
                   Explore More
                 </Button>
               </Link>

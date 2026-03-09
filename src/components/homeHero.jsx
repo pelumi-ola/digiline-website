@@ -77,7 +77,7 @@ export function Hero({
           >
             {primaryCTA && (
               <Link href={primaryCTA.href}>
-                <Button className="bg-primary hover:bg-primary/80 text-white px-10 py-8 rounded-lg font-semibold text-sm uppercase tracking-wide transition-all duration-300 hover:scale-105">
+                <Button className="bg-primary hover:bg-primary/80 text-white px-10 py-8 rounded-lg font-semibold text-sm capitalize tracking-wide transition-all duration-300 hover:scale-105">
                   {primaryCTA.text}
                   <ArrowRight className="w-6 h-6 ml-2" />
                 </Button>
@@ -88,7 +88,7 @@ export function Hero({
               <Link href={secondaryCTA.href}>
                 <Button
                   variant="outline"
-                  className="border-2 border-primary text-ring bg-white/10 px-10 py-8 rounded-lg font-semibold text-sm uppercase tracking-wide transition-all duration-300 hover:scale-105"
+                  className="border-2 border-primary text-ring bg-white/10 px-10 py-8 rounded-lg font-semibold text-sm capitalize tracking-wide transition-all duration-300 hover:scale-105"
                 >
                   {secondaryCTA.text}
                 </Button>

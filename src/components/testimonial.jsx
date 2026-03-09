@@ -102,7 +102,7 @@ export default function Testimonial() {
                 {/* Top */}
                 <div>
                   <div className="flex justify-between items-center mb-4">
-                    <span className="text-md  font-bold text-primary uppercase">
+                    <span className="text-md  font-bold text-primary capitalize">
                       {item.company}
                     </span>
                     <ImQuotesRight className="text-primary w-5 h-5" />

@@ -18,10 +18,10 @@ export function Navbar() {
   // const toggleMenu = () => setIsOpen(!isOpen);
 
   const links = [
-    { href: "/", label: "HOME" },
-    { href: "/about", label: "ABOUT" },
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About" },
     {
-      label: "SOLUTIONS",
+      label: "Solutions",
       icon: BiChevronDown,
       mega: true,
       dropdown: [
@@ -47,10 +47,10 @@ export function Navbar() {
       ],
     },
 
-    { href: "/developer", label: "DEVELOPER" },
-    { href: "/career", label: "CAREER" },
+    { href: "/developer", label: "Developer" },
+    { href: "/career", label: "Career" },
     {
-      label: "CONTACTS",
+      label: "Contacts",
       icon: BiChevronDown,
       mega: false,
       dropdown: [
@@ -59,7 +59,7 @@ export function Navbar() {
       ],
     },
     {
-      label: "POLICIES",
+      label: "Policies",
       icon: BiChevronDown,
       mega: false,
       dropdown: [
@@ -94,7 +94,7 @@ export function Navbar() {
                   {link.dropdown ? (
                     <button
                       type="button"
-                      className="flex items-center gap-1 text-[14px] font-semibold text-ring hover:text-primary transition-colors uppercase tracking-wide"
+                      className="flex items-center gap-1 text-[14px] font-semibold text-ring hover:text-primary transition-colors capitalize tracking-wide"
                     >
                       {link.label}
                       {Icon && (
@@ -107,7 +107,7 @@ export function Navbar() {
                   ) : (
                     <Link
                       href={link.href}
-                      className="flex items-center gap-1 text-[14px] font-semibold text-ring hover:text-primary transition-colors uppercase tracking-wide"
+                      className="flex items-center gap-1 text-[14px] font-semibold text-ring hover:text-primary transition-colors capitalize tracking-wide"
                     >
                       {link.label}
                     </Link>
@@ -179,7 +179,7 @@ export function Navbar() {
                 {link.href ? (
                   <Link
                     href={link.href}
-                    className="block px-2 py-2 text-sm font-semibold text-gray-700 hover:text-primary hover:bg-gray-50 rounded uppercase tracking-wide"
+                    className="block px-2 py-2 text-sm font-semibold text-gray-700 hover:text-primary hover:bg-gray-50 rounded capitalize tracking-wide"
                     onClick={() => setIsOpen(false)}
                   >
                     {link.label}
@@ -188,7 +188,7 @@ export function Navbar() {
                   // Dropdown toggle for links with sublinks
                   <button
                     onClick={() => toggleDropdown(link.label)}
-                    className="w-full flex justify-between items-center px-2 py-2 text-sm font-semibold text-gray-700 hover:text-primary hover:bg-gray-50 rounded uppercase tracking-wide"
+                    className="w-full flex justify-between items-center px-2 py-2 text-sm font-semibold text-gray-700 hover:text-primary hover:bg-gray-50 rounded capitalize tracking-wide"
                   >
                     {link.label}
                     <BiChevronDown
