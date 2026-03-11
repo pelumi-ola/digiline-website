@@ -1,9 +1,6 @@
 "use client";
-import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/homeHero";
 import { ServiceCard } from "@/components/service-card";
-import { Newsletter } from "@/components/newsletter";
-import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { herobg, herotextImg } from "@/assets";
@@ -90,8 +87,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white overflow-hidden">
-      <Navbar />
-
       <div className="relative">
         {/* Hero Section */}
         <Hero
@@ -257,10 +252,6 @@ export default function Home() {
       </section>
 
       <Partners />
-
-      <Newsletter />
-      {/* Footer */}
-      <Footer />
     </div>
   );
 }

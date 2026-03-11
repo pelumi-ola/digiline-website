@@ -1,8 +1,6 @@
 "use client";
-import { Navbar } from "@/components/navbar";
+
 import { Hero } from "@/components/hero";
-import { Newsletter } from "@/components/newsletter";
-import { Footer } from "@/components/footer";
 import { ServiceheroImg } from "@/assets";
 import { SalesPerformance } from "@/components/salesperformance";
 import { Partners } from "@/components/partners";
@@ -27,8 +25,6 @@ const fadeUp = {
 export default function VoicedBased() {
   return (
     <div className="min-h-screen bg-white">
-      <Navbar />
-
       {/* Hero Section */}
       <Hero
         title="Voiced Based Solution"
@@ -114,10 +110,6 @@ export default function VoicedBased() {
       <UsecasesCard />
       <Testimonial />
       <Partners />
-      {/* Newsletter Section */}
-      <Newsletter />
-      {/* Footer */}
-      <Footer />
     </div>
   );
 }

@@ -1,8 +1,6 @@
 "use client";
-import { Navbar } from "@/components/navbar";
+
 import { Hero } from "@/components/hero";
-import { Newsletter } from "@/components/newsletter";
-import { Footer } from "@/components/footer";
 import { contactheroImg, contacttextImg } from "@/assets";
 import { IoLocationSharp, IoMail, IoCall } from "react-icons/io5";
 import Image from "next/image";
@@ -41,8 +39,6 @@ const slideUp = {
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-white">
-      <Navbar />
-
       {/* Hero Section */}
       <Hero
         title="Contact Us"
@@ -255,11 +251,6 @@ export default function ContactPage() {
           </motion.div>
         </motion.section>
       </div>
-
-      {/* Newsletter Section */}
-      <Newsletter />
-      {/* Footer */}
-      <Footer />
     </div>
   );
 }

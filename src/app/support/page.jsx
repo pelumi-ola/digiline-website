@@ -1,8 +1,5 @@
 "use client";
-import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/hero";
-import { Newsletter } from "@/components/newsletter";
-import { Footer } from "@/components/footer";
 import { contactheroImg, supporttextImg } from "@/assets";
 import { BsArrowRight } from "react-icons/bs";
 import { FaWhatsapp } from "react-icons/fa";
@@ -43,7 +40,6 @@ const slideRight = {
 export default function SupportPage() {
   return (
     <div className="min-h-screen bg-white">
-      <Navbar />
 
       {/* Hero Section */}
       <Hero
@@ -113,11 +109,6 @@ export default function SupportPage() {
           <span className="text-xs text-gray-700">Need Help? Chat with Us</span>
         </div>
       </motion.section>
-
-      {/* Newsletter Section */}
-      <Newsletter />
-      {/* Footer */}
-      <Footer />
     </div>
   );
 }

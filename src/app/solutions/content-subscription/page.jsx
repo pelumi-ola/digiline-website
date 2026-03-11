@@ -1,8 +1,5 @@
 "use client";
-import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/hero";
-import { Newsletter } from "@/components/newsletter";
-import { Footer } from "@/components/footer";
 import { ServiceheroImg } from "@/assets";
 import { SalesPerformance } from "@/components/salesperformance";
 import { Partners } from "@/components/partners";
@@ -27,8 +24,6 @@ const fadeUp = {
 export default function ContentSubsolution() {
   return (
     <div className="min-h-screen bg-white">
-      <Navbar />
-
       {/* Hero Section */}
       <Hero
         title="Content Subscription &"
@@ -117,10 +112,6 @@ export default function ContentSubsolution() {
       <UsecasesCard />
       <Testimonial />
       <Partners />
-      {/* Newsletter Section */}
-      <Newsletter />
-      {/* Footer */}
-      <Footer />
     </div>
   );
 }

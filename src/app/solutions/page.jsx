@@ -1,8 +1,5 @@
 "use client";
-import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/hero";
-import { Newsletter } from "@/components/newsletter";
-import { Footer } from "@/components/footer";
 import { ServiceheroImg, solutiontextImg } from "@/assets";
 import Image from "next/image";
 import { SalesPerformance } from "@/components/salesperformance";
@@ -27,8 +24,6 @@ const fadeUp = {
 export default function SolutionsPage() {
   return (
     <div className="min-h-screen bg-white">
-      <Navbar />
-
       {/* Hero Section */}
       <Hero
         title="Solutions"
@@ -88,10 +83,6 @@ export default function SolutionsPage() {
       <UsecasesCard />
       <Testimonial />
       <Partners />
-      {/* Newsletter Section */}
-      <Newsletter />
-      {/* Footer */}
-      <Footer />
     </div>
   );
 }

@@ -1,8 +1,6 @@
 "use client";
-import { Navbar } from "@/components/navbar";
+
 import { Hero } from "@/components/hero";
-import { Newsletter } from "@/components/newsletter";
-import { Footer } from "@/components/footer";
 import { ServiceheroImg } from "@/assets";
 import { SalesPerformance } from "@/components/salesperformance";
 import { Partners } from "@/components/partners";
@@ -27,8 +25,6 @@ const fadeUp = {
 export default function Developer() {
   return (
     <div className="min-h-screen bg-white">
-      <Navbar />
-
       {/* Hero Section */}
       <Hero
         title="Custom API Development"
@@ -104,10 +100,6 @@ export default function Developer() {
       <UsecasesCard />
       <Testimonial />
       <Partners />
-      {/* Newsletter Section */}
-      <Newsletter />
-      {/* Footer */}
-      <Footer />
     </div>
   );
 }

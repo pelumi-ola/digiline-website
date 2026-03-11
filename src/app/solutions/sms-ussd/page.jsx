@@ -1,8 +1,5 @@
 "use client";
-import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/hero";
-import { Newsletter } from "@/components/newsletter";
-import { Footer } from "@/components/footer";
 import { ServiceheroImg } from "@/assets";
 import { SalesPerformance } from "@/components/salesperformance";
 import { Partners } from "@/components/partners";
@@ -28,8 +25,6 @@ const fadeUp = {
 export default function SMSandUSSD() {
   return (
     <div className="min-h-screen bg-white">
-      <Navbar />
-
       {/* Hero Section */}
       <Hero
         title="SMS & USSD Authentication"
@@ -146,10 +141,6 @@ export default function SMSandUSSD() {
       <UsecasesCard />
       <Testimonial />
       <Partners />
-      {/* Newsletter Section */}
-      <Newsletter />
-      {/* Footer */}
-      <Footer />
     </div>
   );
 }

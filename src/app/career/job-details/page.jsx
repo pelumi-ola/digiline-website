@@ -1,7 +1,6 @@
 "use client";
 
 import { Hero } from "@/components/hero";
-import { Newsletter } from "@/components/newsletter";
 import { careerheroImg, Rectangle } from "@/assets";
 import Image from "next/image";
 import Link from "next/link";
@@ -192,12 +191,6 @@ export default function JobDetails() {
           </div>
         </div>
       </motion.section>
-
-      {/* Newsletter Section */}
-      <Newsletter />
-
-      {/* Footer */}
-      <Footer />
     </div>
   );
 }

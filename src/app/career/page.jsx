@@ -1,8 +1,5 @@
 "use client";
-import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/hero";
-import { Newsletter } from "@/components/newsletter";
-import { Footer } from "@/components/footer";
 import {
   careerheroImg,
   careertextImg,
@@ -43,8 +40,6 @@ const staggerContainer = {
 export default function CareerPage() {
   return (
     <div className="min-h-screen bg-white">
-      <Navbar />
-
       {/* Hero Section */}
       <Hero
         title="Career"
@@ -255,11 +250,12 @@ export default function CareerPage() {
       {/* Driven By Purpose Section */}
       <section className="py-20 bg-[#E1E0E6]">
         <motion.div
-         variants={fadeUp}
+          variants={fadeUp}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.3 }} 
-        className="max-w-6xl mx-auto px-6 lg:px-20 text-center">
+          viewport={{ once: false, amount: 0.3 }}
+          className="max-w-6xl mx-auto px-6 lg:px-20 text-center"
+        >
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
             Driven by Purpose, <br /> United by Culture.
           </h2>
@@ -285,12 +281,6 @@ export default function CareerPage() {
           </div>
         </motion.div>
       </section>
-
-      {/* Newsletter Section */}
-      <Newsletter />
-
-      {/* Footer */}
-      <Footer />
     </div>
   );
 }
