@@ -184,7 +184,7 @@ export function Navbar() {
                         {/* Services */}
                         <div>
                           <Link
-                            href="/services"
+                            href="/service"
                             className={`text-sm font-bold uppercase transition ${
                               pathname === "/services"
                                 ? "text-primary border-b-2 border-primary"
