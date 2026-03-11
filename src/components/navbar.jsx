@@ -6,8 +6,10 @@ import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import { digilogo } from "@/assets";
 import { BiChevronDown } from "react-icons/bi";
+import { usePathname } from "next/navigation";
 
 export function Navbar() {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null); // tracks which dropdown is open
 
@@ -24,8 +26,18 @@ export function Navbar() {
       label: "Solutions",
       icon: BiChevronDown,
       mega: true,
-      dropdown: [
-        { label: "Solutions", href: "/solutions" },
+      products: [
+        { label: "Lottery - Spin it", href: "/products/lottery" },
+        { label: "Trivia - Edu-Digi", href: "/products/trivia" },
+        {
+          label: "Mobile Games",
+          href: "/products/mobile-games",
+        },
+        { label: "Content Service", href: "/products/content-service" },
+        // { label: "Interactive Voiced Response (IVR)", href: "/products/IVR" },
+        { label: "Ring Back Tone (RBT)", href: "/products/RBT" },
+      ],
+      services: [
         {
           label: "SMS & USSD Authentication Solutions (OTP & 2FA)",
           href: "/solutions/sms-ussd",
@@ -69,9 +81,23 @@ export function Navbar() {
     },
   ];
 
+  const isParentActive = (link) => {
+    if (link.href) return pathname === link.href;
+
+    const children = [
+      ...(link.products || []),
+      ...(link.services || []),
+      ...(link.dropdown || []),
+    ];
+
+    return children.some((item) => pathname === item.href);
+  };
+
+  const isChildActive = (child) => pathname === child.href;
+
   return (
     <nav className="bg-white border-b border-gray-100 sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center">
@@ -85,16 +111,20 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex gap-8">
+          <div className="hidden md:flex gap-5">
             {links.map((link, index) => {
               const Icon = link.icon;
 
               return (
                 <div key={index} className="relative group">
-                  {link.dropdown ? (
+                  {link.dropdown || link.mega ? (
                     <button
                       type="button"
-                      className="flex items-center gap-1 text-[14px] font-semibold text-ring hover:text-primary transition-colors capitalize tracking-wide"
+                      className={`flex items-center gap-1 text-[14px] font-semibold p-2 rounded transition-colors capitalize tracking-wide ${
+                        isParentActive(link)
+                          ? "bg-[hsla(271,49%,83%,1)] text-white border-b-2 border-primary"
+                          : "text-ring hover:text-white hover:bg-[hsla(271,49%,83%,1)]"
+                      }`}
                     >
                       {link.label}
                       {Icon && (
@@ -107,44 +137,94 @@ export function Navbar() {
                   ) : (
                     <Link
                       href={link.href}
-                      className="flex items-center gap-1 text-[14px] font-semibold text-ring hover:text-primary transition-colors capitalize tracking-wide"
+                      className={`flex items-center gap-1 text-[14px] font-semibold p-2 rounded transition-colors capitalize tracking-wide ${
+                        pathname === link.href
+                          ? "bg-[hsla(271,49%,83%,1)] text-white border-b-2 border-primary"
+                          : "text-ring hover:text-white hover:bg-[hsla(271,49%,83%,1)]"
+                      }`}
                     >
                       {link.label}
                     </Link>
                   )}
 
                   {/* Dropdown */}
-                  {link.dropdown && link.mega && (
-                    <div className="absolute left-1/2 -translate-x-1/2 top-full mt-6 p-7.5 w-[437px] h-[264px] bg-white shadow-xl rounded-sm opacity-0 invisible translate-y-4 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 z-50">
-                      <div className="grid grid-cols-2 gap-5 mt-6">
-                        {link.dropdown.map((item, i) => (
+                  {link.mega && (
+                    <div className="absolute left-1/2 -translate-x-1/2 top-full mt-6 p-8 w-[520px] bg-white shadow-xl rounded-sm opacity-0 invisible translate-y-4 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 z-50">
+                      <div className="grid grid-cols-2 gap-10">
+                        {/* Products */}
+                        <div>
                           <Link
-                            key={item.href}
-                            href={item.href}
-                            className={`transition ${
-                              i === 0
-                                ? "col-span-2 text-base font-semibold text-[#0C6EB5] mb-3"
-                                : "text-[#0C6EB5] text-sm hover:text-primary"
+                            href="/products"
+                            className={`text-sm font-bold mb-4 uppercase transition ${
+                              pathname === "/products"
+                                ? "text-primary border-b-2 border-primary"
+                                : "text-[#0C6EB5] hover:text-primary"
                             }`}
                           >
-                            {item.label}
+                            Products
                           </Link>
-                        ))}
+
+                          <div className="flex flex-col gap-3 mt-5">
+                            {link.products?.map((item) => (
+                              <Link
+                                key={item.href}
+                                href={item.href}
+                                className={`text-sm transition ${
+                                  pathname === item.href
+                                    ? "text-primary font-semibold border-b-2 border-primary"
+                                    : "text-[#0C6EB5] hover:text-primary"
+                                }`}
+                              >
+                                {item.label}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Services */}
+                        <div>
+                          <Link
+                            href="/services"
+                            className={`text-sm font-bold uppercase transition ${
+                              pathname === "/services"
+                                ? "text-primary border-b-2 border-primary"
+                                : "text-[#0C6EB5] hover:text-primary"
+                            }`}
+                          >
+                            Services
+                          </Link>
+
+                          <div className="flex flex-col gap-3 mt-5">
+                            {link.services?.map((item) => (
+                              <Link
+                                key={item.href}
+                                href={item.href}
+                                className={`text-sm transition ${
+                                  pathname === item.href
+                                    ? "text-primary font-semibold border-b-2 border-primary"
+                                    : "text-[#0C6EB5] hover:text-primary"
+                                }`}
+                              >
+                                {item.label}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
                       </div>
                     </div>
                   )}
 
                   {/* Normal Dropdown */}
                   {link.dropdown && !link.mega && (
-                    <div className="absolute left-0 top-full mt-4 w-40 h-34 py-2.5 px-3 flex flex-col gap-[10px] bg-white shadow-xl rounded-sm opacity-0 invisible translate-y-4 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 ease-out z-50">
-                      {link.dropdown.map((item, i) => (
+                    <div className="absolute left-0 top-full mt-4 w-[150px] h-34 py-2.5 px-3 flex flex-col gap-[10px] bg-white shadow-xl rounded-sm opacity-0 invisible translate-y-4 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 ease-out z-50">
+                      {link.dropdown.map((item) => (
                         <Link
                           key={item.href}
                           href={item.href}
-                          className={`transition ${
-                            i === 0
-                              ? "col-span-2 text-base font-semibold text-[#0C6EB5] mb-3"
-                              : "text-[#0C6EB5] text-sm hover:text-primary"
+                          className={`transition px-2 py-1 rounded ${
+                            isChildActive(item)
+                              ? "bg-[hsla(271,49%,83%,1)] text-white font-semibold"
+                              : "text-[#0C6EB5] hover:text-primary"
                           }`}
                         >
                           {item.label}
@@ -179,7 +259,11 @@ export function Navbar() {
                 {link.href ? (
                   <Link
                     href={link.href}
-                    className="block px-2 py-2 text-sm font-semibold text-gray-700 hover:text-primary hover:bg-gray-50 rounded capitalize tracking-wide"
+                    className={`flex items-center gap-1 text-[14px] font-semibold p-2 rounded transition-colors capitalize tracking-wide ${
+                      pathname === link.href
+                        ? "bg-[hsla(271,49%,83%,1)] text-white border-b-2 border-primary"
+                        : "text-ring hover:text-white hover:bg-[hsla(271,49%,83%,1)]"
+                    }`}
                     onClick={() => setIsOpen(false)}
                   >
                     {link.label}
@@ -188,7 +272,11 @@ export function Navbar() {
                   // Dropdown toggle for links with sublinks
                   <button
                     onClick={() => toggleDropdown(link.label)}
-                    className="w-full flex justify-between items-center px-2 py-2 text-sm font-semibold text-gray-700 hover:text-primary hover:bg-gray-50 rounded capitalize tracking-wide"
+                    className={`flex items-center gap-1 text-[14px] font-semibold p-2 rounded transition-colors capitalize tracking-wide ${
+                      isParentActive(link)
+                        ? "bg-[hsla(271,49%,83%,1)] text-white border-b-2 border-primary"
+                        : "text-ring hover:text-white hover:bg-[hsla(271,49%,83%,1)]"
+                    }`}
                   >
                     {link.label}
                     <BiChevronDown
@@ -199,25 +287,47 @@ export function Navbar() {
                   </button>
                 )}
 
-                {/* Sublinks */}
-                {link.dropdown && openDropdown === link.label && (
-                  <div className="flex flex-col pl-5 mt-1 mb-2">
-                    {link.dropdown.map((item, i) => (
-                      <Link
-                        key={item.href}
-                        href={item.href}
-                        className={`block px-2 py-1 rounded ${
-                          i === 0
-                            ? "font-semibold text-[#0C6EB5]"
-                            : "text-sm font-medium text-gray-600 hover:text-primary hover:bg-gray-50"
-                        }`}
-                        onClick={() => setIsOpen(false)}
-                      >
-                        {item.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
+                {/* Sublinks for mobile */}
+                {(link.dropdown || link.mega) &&
+                  openDropdown === link.label && (
+                    <div className="flex flex-col pl-5 mt-1 mb-2">
+                      {/* For normal dropdown */}
+                      {link.dropdown?.map((item) => (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          className={`block px-2 py-1 rounded ${
+                            pathname === item.href
+                              ? "bg-[hsla(271,49%,83%,1)] text-white font-semibold"
+                              : "text-sm font-medium text-gray-600 hover:text-primary hover:bg-gray-50"
+                          }`}
+                          onClick={() => setIsOpen(false)}
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+
+                      {/* For mega menu */}
+                      {link.mega &&
+                        [
+                          ...(link.products || []),
+                          ...(link.services || []),
+                        ].map((item) => (
+                          <Link
+                            key={item.href}
+                            href={item.href}
+                            className={`block px-2 py-1 rounded ${
+                              pathname === item.href
+                                ? "bg-[hsla(271,49%,83%,1)] text-white font-semibold"
+                                : "text-sm font-medium text-gray-600 hover:text-primary hover:bg-gray-50"
+                            }`}
+                            onClick={() => setIsOpen(false)}
+                          >
+                            {item.label}
+                          </Link>
+                        ))}
+                    </div>
+                  )}
               </div>
             ))}
           </div>

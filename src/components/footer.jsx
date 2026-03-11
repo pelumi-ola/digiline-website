@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { digilogoFooter } from "@/assets";
 import { motion } from "framer-motion";
+import {Newsletter } from "./newsletter";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 60 },
@@ -21,6 +22,8 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
+    <>
+     <Newsletter />
     <footer className="bg-[#9D66F1] text-white pt-16 pb-10">
       <motion.div
         variants={fadeUp}
@@ -30,19 +33,24 @@ export function Footer() {
         className="max-w-7xl mx-auto px-6 lg:px-20"
       >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
-          <Link href="/">
-            <Image
-              src={digilogoFooter}
-              alt="Digiline Logo"
-              width={900}
-              height={900}
-              className="mb-4"
-            />
-          </Link>
+          <div className="flex flex-col items-start">
+            <Link href="/">
+              <Image
+                src={digilogoFooter}
+                alt="Digiline Logo"
+                width={150}
+                height={150}
+                className="mb-2"
+              />
+            </Link>
+            <p className="text-purple-200 text-sm max-w-xs">
+              Digiline Solution Limited – Ideas to value-added Services
+            </p>
+          </div>
 
           {/* Resources */}
           <div>
-            <h3 className="font-semibold mb-6 text-white">Resource</h3>
+            <h3 className="font-semibold mb-6 text-white">Quick Links</h3>
             <ul className="space-y-3 text-sm text-purple-200">
               <li>
                 <Link href="/career" className="hover:text-white transition">
@@ -86,7 +94,7 @@ export function Footer() {
 
               <div className="flex justify-between">
                 <span className="font-medium text-white">Phone</span>
-                <span className="text-right">+234 (0) 9038125089</span>
+                <span className="text-right">+234 (0) 9012345678</span>
               </div>
 
               <div className="flex justify-between">
@@ -112,5 +120,6 @@ export function Footer() {
         </div>
       </motion.div>
     </footer>
+    </>
   );
 }

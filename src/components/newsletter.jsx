@@ -45,7 +45,7 @@ export function Newsletter({
         once: false,
         amount: 0.3,
       }}
-      className="flex flex-cols md:flex-row bg-[#9D66F1]/44 py-12 md:py-16 md:px-20 px-4 gap-20 md:gap-80"
+      className="flex flex-col md:flex-row bg-[#9D66F1]/44 py-12 md:py-16 md:px-20 px-4 gap-20 md:gap-80"
     >
       <div className="mb-8">
         <h2 className="text-md md:text-2xl font-bold text-[#000000] mb-3 text-balance">

@@ -123,7 +123,7 @@ export default function ContactPage() {
                         Call Us
                       </h4>
                       <p className="text-xs text-gray-600">
-                        +234 (0) 808 125 2322
+                        +234 (0) 8012345678
                       </p>
                     </div>
                   </div>

@@ -1,8 +1,7 @@
 "use client";
-import { Navbar } from "@/components/navbar";
+
 import { Hero } from "@/components/hero";
 import { Newsletter } from "@/components/newsletter";
-import { Footer } from "@/components/footer";
 import { careerheroImg, Rectangle } from "@/assets";
 import Image from "next/image";
 import Link from "next/link";
@@ -26,8 +25,6 @@ const fadeUp = {
 export default function JobDetails() {
   return (
     <div className="min-h-screen bg-white">
-      <Navbar />
-
       {/* Hero Section */}
       <Hero
         title="Career"

@@ -1,3 +1,7 @@
+import logo2p from "../../public/2p.png";
+import logo3p from "../../public/3p.png";
+import logo4p from "../../public/4p.png";
+import logo5p from "../../public/5p.png";
 import mobile9 from "../../public/9mobil-icon.png";
 import aboutheroImg from "../../public/about-hero-bg.png";
 import abouttextImg from "../../public/abouttextImg.svg";
@@ -36,14 +40,38 @@ import wdcard001 from "../../public/wd-card-001.png";
 import wdcard002 from "../../public/wd-card-002.png";
 import wdcard003 from "../../public/wd-card-003.png";
 import wdcard004 from "../../public/wd-card-004.png";
-import digilogoFooter from "../../public/digilogo-footer.svg";
+import digilogoFooter from "../../public/digilogo-white.svg";
+import RxDividerVertical from "../../public/RxDividerVertical.svg";
 import ServiceheroImg from "../../public/serviceheroImg.png";
 import contacttextImg from "../../public/contact-text-img.png";
+import img1 from "../../public/img1.png";
+import img2 from "../../public/img2.png";
+import img3 from "../../public/img3.png";
+import abstract from "../../public/abstract.png";
+import abstract2 from "../../public/abstract2.png";
+import heroContactImg from "../../public/call-hero-img.png";
+import GamesheroImg from "../../public/games-hero-bg.png";
+import productImg from "../../public/product-img.png";
+import productheroimg from "../../public/productHero_bg.png";
 
 export {
+  heroContactImg,
+  GamesheroImg,
+  productImg,
+  productheroimg,
+  abstract,
+  abstract2,
+  img1,
+  img2,
+  img3,
   digilogoFooter,
   contacttextImg,
   ServiceheroImg,
+  RxDividerVertical,
+  logo2p,
+  logo3p,
+  logo4p,
+  logo5p,
   mobile9,
   aboutheroImg,
   abouttextImg,

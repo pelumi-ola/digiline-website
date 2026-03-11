@@ -1,8 +1,5 @@
 "use client";
-import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/hero";
-import { Newsletter } from "@/components/newsletter";
-import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -73,12 +70,11 @@ const slideUp = {
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white">
-      <Navbar />
 
       {/* Hero Section */}
       <Hero
         title="About Us"
-        backgroundImage={aboutheroImg}
+        backgroundImage={aboutheroImg}Q
         textLinkLeft={{ label: "Home", href: "/" }}
         textLinkRight={{ label: "About", href: "/about" }}
       />
@@ -343,12 +339,6 @@ export default function AboutPage() {
           </motion.div>
         </motion.div>
       </section>
-
-      {/* Newsletter Section */}
-      <Newsletter />
-
-      {/* Footer */}
-      <Footer />
     </div>
   );
 }
