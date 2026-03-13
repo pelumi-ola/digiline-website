@@ -22,14 +22,14 @@ export default function ProductTimeline() {
     },
     {
       title: "Mobile Games",
-      href: "/products/games",
+      href: "/products/mobile-games",
       description:
         "GameD and GamesConnect are 100% digital platform focused on providing premium HTML5 games and accessible on all device types through the Browser.",
       color: "bg-purple-500",
     },
     {
       title: "Content Services",
-      href: "/products/content-services",
+      href: "/products/content-service",
       description:
         "Stream-D is a 100% digital platform that provides football highlights across multiple leagues in Europe, America, South America, Asia, and Africa.",
       color: "bg-green-500",
