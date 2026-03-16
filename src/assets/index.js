@@ -7,7 +7,7 @@ import aboutheroImg from "../../public/about-hero-bg.png";
 import abouttextImg from "../../public/abouttextImg.svg";
 import airtelIcon from "../../public/airtel-icon.png";
 import careerheroImg from "../../public/career-hero-bg.jpg";
-import careertextImg from "../../public/career-text-img.png";
+import careertextImg from "../../public/job_offer.png";
 import contactheroImg from "../../public/contact-hero-text.png";
 import customerCentric from "../../public/customercentricity.svg";
 import digilogo from "../../public/digilogo.svg";
